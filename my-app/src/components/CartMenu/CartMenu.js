@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import Button from "../Button/Button";
 import {calcTotalPrice} from "../utils";
 import "./CartMenu.css"
+import CartItem from "../CartItem/CartItem";
+
 
 const CartMenu = ({items,onclick}) => {
 
@@ -9,7 +11,9 @@ const CartMenu = ({items,onclick}) => {
                 <div className="cart-menu">
                    <div className="cart-menu__games-list">
                        {
-                           items.length > 0 ?  items.map((game)=>game.title) : "Ваша корзина пустая"
+                           items.length > 0 ?  items.map((game)=><CartItem key={game.title}
+                           price={game.price} title={game.title}  id={game.id}
+                           />) : "Ваша корзина пустая"
 
                        }
                    </div>
@@ -24,7 +28,6 @@ const CartMenu = ({items,onclick}) => {
                             </div>
                             : null
                     }
-
                 </div>
     );
 };

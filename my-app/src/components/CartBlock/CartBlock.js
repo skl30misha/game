@@ -4,6 +4,7 @@ import './CarBlock.css'
 import {useSelector} from "react-redux";
 import CartMenu from "../CartMenu/CartMenu";
 import {calcTotalPrice} from "../utils";
+import ItemsInCart from "../ItemsInCart/ItemsInCart";
 
 
 
@@ -16,6 +17,7 @@ const CartBlock = () => {
         const totalPrice = calcTotalPrice(items)
     return (
         <div className="cart-block" >
+            <ItemsInCart quantity={items.length}/>
 <BiCart size={25} className="cart-block__icon" onClick={()=>setIsCartMenuVisible(!isCartMenuVisible)} />
             {
                 totalPrice >0  ?
