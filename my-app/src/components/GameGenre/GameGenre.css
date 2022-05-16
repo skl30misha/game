@@ -1,0 +1,14 @@
+.game-genre{
+
+    background-color: rgb(80 , 82,84);
+    padding: 2px 12px;
+    font-size: 12px;
+    border-radius: 10px;
+
+}
+
+.game-genre:not(:last-child) {
+    margin-right: 10px;
+
+}
+
